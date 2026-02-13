@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Sprint 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        :root { --primary-pink: #ff758f; --dark-pink: #c9184a; --bg-gradient: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%); }
+        body { margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; font-family: 'Quicksand', sans-serif; background: var(--bg-gradient); overflow: hidden; }
+        .card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 450px; border: 1px solid rgba(255,255,255,0.3); z-index: 10; position: relative; }
+        h1 { font-family: 'Dancing Script', cursive; font-size: 2.5rem; color: var(--dark-pink); margin-bottom: 1rem; }
+        p { color: #555; font-size: 1rem; line-height: 1.4; }
+        .joke { font-style: italic; color: #d63384; font-size: 0.85rem; margin: 10px 0; background: #fff5f6; padding: 8px; border-radius: 8px; }
+        .btn-group { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+        .btn { background: var(--primary-pink); color: white; border: none; padding: 12px 25px; font-size: 1rem; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; font-weight: 500; }
+        .btn:hover { background: var(--dark-pink); transform: translateY(-2px); }
+        .btn-no { background: #ccc; cursor: not-allowed; opacity: 0.6; }
+        .checkbox-container { display: block; position: relative; padding-left: 35px; margin: 20px auto; cursor: pointer; font-size: 1rem; width: fit-content; text-align: left; }
+        .checkbox-container input { display: none; }
+        .checkmark { position: absolute; top: 0; left: 0; height: 20px; width: 20px; background-color: #eee; border-radius: 5px; border: 1px solid #ddd; }
+        .checkbox-container input:checked ~ .checkmark { background-color: var(--primary-pink); }
+        .clue-box { margin-top: 1rem; padding: 15px; background: rgba(255, 255, 255, 0.5); border-radius: 15px; border: 2px dashed var(--primary-pink); }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="card animate__animated animate__fadeInUp">
+    <div id="step1">
+        <h1>Will you be my Valentine?</h1>
+        <p>I promise no breaking changes this year.</p>
+        <div class="btn-group">
+            <button class="btn" onclick="sayYes()">Yes!</button>
+            <button class="btn btn-no" onclick="alert('Feature Deprecated: \'No\' is no longer supported in this environment.')">No</button>
+        </div>
+    </div>
+
+    <div id="step2" class="hidden animate__animated animate__fadeIn">
+        <h1>First Stop: Coffee ☕</h1>
+        <p>Let's find a window seat and watch the world go by.</p>
+        <p class="joke">"Why do programmers prefer window seats? Because they need a clear view of the 'Cloud' they keep talking about."</p>
+        <label class="checkbox-container">
+            Coffee finished & vibe checked?
+            <input type="checkbox" onclick="nextStep(2, 3)">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div id="step3" class="hidden animate__animated animate__fadeIn">
+        <h1>Level 2: Barcadia 🕹️</h1>
+        <p>Time for some drinks and retro arcade vibes.</p>
+        <p class="joke">"I'm not saying I'm competitive, but I've already pre-ordered the 'Win' for tonight."</p>
+        <label class="checkbox-container">
+            Ready for the final boss battle?
+            <input type="checkbox" onclick="nextStep(3, 4)">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div id="step4" class="hidden animate__animated animate__fadeIn">
+        <h1>Level 3: Gaming 🎮</h1>
+        <p>Back to our favorite setup for a quick session.</p>
+        <p class="joke">"Marriage is just a 2-player co-op where one person does all the inventory management."</p>
+        <label class="checkbox-container">
+            Game over? (Ready for food?)
+            <input type="checkbox" onclick="nextStep(4, 5)">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div id="step5" class="hidden animate__animated animate__zoomIn">
+        <h1>Final Destination: Ngon 🍜</h1>
+        <p>Saturday @ 6:00 PM. Vietnamese feast time!</p>
+        <p class="joke">"I like my noodles like I like my code: authentic, warm, and with zero bugs (hopefully)."</p>
+        <div class="clue-box">
+            <p><strong>See you there, Kavya! ❤️</strong></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function sayYes() {
+        confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#ff758f', '#c9184a', '#ffffff'] });
+        setTimeout(() => nextStep(1, 2), 1000);
+    }
+
+    function nextStep(current, next) {
+        document.getElementById('step' + current).classList.add('hidden');
+        document.getElementById('step' + next).classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
