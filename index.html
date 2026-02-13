@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine Sprint 2026</title>
+    <title>Valentine.exe - Execution Plan</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
         :root { --primary-pink: #ff758f; --dark-pink: #c9184a; --bg-gradient: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%); }
         body { margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; font-family: 'Quicksand', sans-serif; background: var(--bg-gradient); overflow: hidden; }
-        .card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 450px; border: 1px solid rgba(255,255,255,0.3); z-index: 10; position: relative; }
+        .card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 450px; border: 1px solid rgba(255,255,255,0.3); z-index: 10; }
         h1 { font-family: 'Dancing Script', cursive; font-size: 2.5rem; color: var(--dark-pink); margin-bottom: 1rem; }
         p { color: #555; font-size: 1rem; line-height: 1.4; }
-        .joke { font-style: italic; color: #d63384; font-size: 0.85rem; margin: 10px 0; background: #fff5f6; padding: 8px; border-radius: 8px; }
+        .joke { font-style: italic; color: #d63384; font-size: 0.85rem; margin: 15px 0; background: #fff5f6; padding: 10px; border-radius: 8px; border-left: 4px solid var(--primary-pink); }
         .btn-group { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
         .btn { background: var(--primary-pink); color: white; border: none; padding: 12px 25px; font-size: 1rem; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; font-weight: 500; }
         .btn:hover { background: var(--dark-pink); transform: translateY(-2px); }
@@ -22,7 +22,6 @@
         .checkbox-container input { display: none; }
         .checkmark { position: absolute; top: 0; left: 0; height: 20px; width: 20px; background-color: #eee; border-radius: 5px; border: 1px solid #ddd; }
         .checkbox-container input:checked ~ .checkmark { background-color: var(--primary-pink); }
-        .clue-box { margin-top: 1rem; padding: 15px; background: rgba(255, 255, 255, 0.5); border-radius: 15px; border: 2px dashed var(--primary-pink); }
         .hidden { display: none; }
     </style>
 </head>
@@ -31,41 +30,41 @@
 <div class="card animate__animated animate__fadeInUp">
     <div id="step1">
         <h1>Will you be my Valentine?</h1>
-        <p>I promise no breaking changes this year.</p>
+        <p>I tried to push a 'No' option, but it failed the build and didn't make it to production.</p>
         <div class="btn-group">
             <button class="btn" onclick="sayYes()">Yes!</button>
-            <button class="btn btn-no" onclick="alert('Feature Deprecated: \'No\' is no longer supported in this environment.')">No</button>
+            <button class="btn btn-no" onclick="alert('405 Method Not Allowed: The \'No\' endpoint is restricted.')">No</button>
         </div>
     </div>
 
     <div id="step2" class="hidden animate__animated animate__fadeIn">
-        <h1>First Stop: Coffee ☕</h1>
-        <p>Let's find a window seat and watch the world go by.</p>
-        <p class="joke">"Why do programmers prefer window seats? Because they need a clear view of the 'Cloud' they keep talking about."</p>
+        <h1>Stop 1: Coffee ☕</h1>
+        <p>Starting where I love being most, and where you're my favorite spectator...</p>
+        <p class="joke">"Why do programmers love window seats? So they can look at the 'Java' while they drink it."</p>
         <label class="checkbox-container">
-            Coffee finished & vibe checked?
+            Did we find a window seat?
             <input type="checkbox" onclick="nextStep(2, 3)">
             <span class="checkmark"></span>
         </label>
     </div>
 
     <div id="step3" class="hidden animate__animated animate__fadeIn">
-        <h1>Level 2: Barcadia 🕹️</h1>
-        <p>Time for some drinks and retro arcade vibes.</p>
-        <p class="joke">"I'm not saying I'm competitive, but I've already pre-ordered the 'Win' for tonight."</p>
+        <h1>Stop 2: Gaming 🎮</h1>
+        <p>Time to log in for a quick co-op session.</p>
+        <p class="joke">"Our relationship is the only game where I'm happy to be Player 2 as long as we're on the same team."</p>
         <label class="checkbox-container">
-            Ready for the final boss battle?
+            Ready to head out for round 3?
             <input type="checkbox" onclick="nextStep(3, 4)">
             <span class="checkmark"></span>
         </label>
     </div>
 
     <div id="step4" class="hidden animate__animated animate__fadeIn">
-        <h1>Level 3: Gaming 🎮</h1>
-        <p>Back to our favorite setup for a quick session.</p>
-        <p class="joke">"Marriage is just a 2-player co-op where one person does all the inventory management."</p>
+        <h1>Stop 3: Barcadia 🕹️</h1>
+        <p>Retro games and drinks. Let's see those arcade skills.</p>
+        <p class="joke">"I'm not saying I'm competitive, but I've already filed a ticket to nerf your high scores."</p>
         <label class="checkbox-container">
-            Game over? (Ready for food?)
+            Appetite reached maximum level?
             <input type="checkbox" onclick="nextStep(4, 5)">
             <span class="checkmark"></span>
         </label>
@@ -74,8 +73,8 @@
     <div id="step5" class="hidden animate__animated animate__zoomIn">
         <h1>Final Destination: Ngon 🍜</h1>
         <p>Saturday @ 6:00 PM. Vietnamese feast time!</p>
-        <p class="joke">"I like my noodles like I like my code: authentic, warm, and with zero bugs (hopefully)."</p>
-        <div class="clue-box">
+        <p class="joke">"I like my noodles like I like my code: authentic, hot, and with zero merge conflicts."</p>
+        <div style="margin-top:20px; padding:15px; background:rgba(255,117,143,0.1); border-radius:15px; border:2px dashed var(--primary-pink);">
             <p><strong>See you there, Kavya! ❤️</strong></p>
         </div>
     </div>
