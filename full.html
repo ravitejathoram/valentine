@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Kavya | Valentine's 2026</title>
+    <title>For Kavya | The Finale</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -18,29 +18,29 @@
         .btn-yes { background: var(--primary-pink); color: white; box-shadow: 0 4px 15px rgba(255, 117, 143, 0.4); z-index: 2; }
         .btn-no { background: #eee; color: #888; transition: transform 0.8s cubic-bezier(.47,1.64,.41,.8), opacity 0.5s; z-index: 1; }
         .fly-away { transform: translate(600px, -600px) rotate(90deg); opacity: 0; pointer-events: none; }
-        .clue-box { margin-top: 2rem; padding: 1.5rem; background: rgba(255, 117, 143, 0.1); border-radius: 20px; border: 2px dashed var(--primary-pink); text-align: left; }
+        .clue-box { margin-top: 2rem; padding: 1.5rem; background: rgba(255, 117, 143, 0.1); border-radius: 20px; border: 2px dashed var(--primary-pink); text-align: center; }
         .hidden { display: none; }
     </style>
 </head>
 <body>
-    <div class="card animate__animated animate__fadeInDown">
+    <div class="card animate__animated animate__heartBeat">
         <div id="ask-section">
             <h1>Hi Kavya... ❤️</h1>
-            <p>Will you be my Valentine?</p>
+            <p>Aren't you hungry yet?</p>
             <div class="btn-group">
                 <button class="btn btn-yes" onclick="handleYes()">Yes!</button>
-                <button id="no-btn" class="btn btn-no" onclick="alert('System Error: No is not a supported option.')">No</button>
+                <button id="no-btn" class="btn btn-no" onclick="alert('Denied: \'No\' is not an option because I am starving!')">No</button>
             </div>
         </div>
         <div id="clue-section" class="hidden animate__animated animate__zoomIn">
-            <h1>Stop 1</h1>
-            <p>Starting the morning at my favorite spot with my favorite person.</p>
+            <h1>Stop 4</h1>
+            <p><b>Let's stop pho-ling around and go eat!</b></p>
         </div>
     </div>
     <script>
         function handleYes() {
             document.getElementById('no-btn').classList.add('fly-away');
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 }, colors: ['#ff758f', '#ffffff', '#c9184a'] });
             setTimeout(() => {
                 document.getElementById('ask-section').classList.add('hidden');
                 document.getElementById('clue-section').classList.remove('hidden');

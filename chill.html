@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Kavya | Valentine's 2026</title>
+    <title>For Kavya | Stop 2</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -23,24 +23,24 @@
     </style>
 </head>
 <body>
-    <div class="card animate__animated animate__fadeInDown">
+    <div class="card animate__animated animate__jackInTheBox">
         <div id="ask-section">
             <h1>Hi Kavya... ❤️</h1>
-            <p>Will you be my Valentine?</p>
+            <p>Do you wanna skip reality?</p>
             <div class="btn-group">
                 <button class="btn btn-yes" onclick="handleYes()">Yes!</button>
-                <button id="no-btn" class="btn btn-no" onclick="alert('System Error: No is not a supported option.')">No</button>
+                <button id="no-btn" class="btn btn-no" onclick="alert('Feature Unavailable: Reality cannot be skipped with No.')">No</button>
             </div>
         </div>
         <div id="clue-section" class="hidden animate__animated animate__zoomIn">
-            <h1>Stop 1</h1>
-            <p>Starting the morning at my favorite spot with my favorite person.</p>
+            <h1>Stop 2</h1>
+            <p>Lets go to a different dimension!</p>
         </div>
     </div>
     <script>
         function handleYes() {
             document.getElementById('no-btn').classList.add('fly-away');
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
             setTimeout(() => {
                 document.getElementById('ask-section').classList.add('hidden');
                 document.getElementById('clue-section').classList.remove('hidden');
